@@ -1,47 +1,75 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Graduate Curriculum Vitae
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is a modified ONE COLUMN version of
+% the following template:
+% 
+% Deedy - One Page Two Column Resume
 % LaTeX Template
-% Version 1.1 (9/12/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
+% Version 1.1 (30/4/2014)
 %
 % Original author:
-% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
+% Debarghya Das (http://debarghyadas.com)
 %
-% Important note:
-% This template requires the res.cls file to be in the same directory as the
-% .tex file. The res.cls file provides the resume style used for structuring the
-% document.
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\documentclass[margin, 10pt]{res} % Use the res.cls style, the font size can be changed to 11pt or 12pt here
-
-\usepackage{graphicx}
-\usepackage[hidelinks]{hyperref}
+\documentclass[]{deedy-resume-openfont}
 \usepackage{fontawesome}
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{helvet} % Default font is the helvetica postscript font
-%\usepackage{newcent} % To change the default font to the new century schoolbook postscript font uncomment this line and comment the one above
 
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	NAME AND ADDRESS SECTION
-%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
 
-\moveleft.5\hoffset\centerline{\large\bf Stanislav Bochkarev} % Your name at the top
- 
-\moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
-\vskip-20pt 
-\moveleft.5\hoffset\vbox{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\namesection{Stanislav}{Bochkarev}{
+%	\urlstyle{same}\url{http://example.com} \\
+%	\href{mailto:sbochkarev@outlook.com}{sbochkarev@outlook.com} | 226.808.1064
 \begin{center}
 \begin{tabular}{ l l }
 	\faLinkedin\  \href{http://www.linkedin.com/in/sbochkarev}{linkedin.com/in/sbochkarev} & \faGithub\ \href{https://github.com/sbochkar}{github.com/sbochkar}\\
@@ -49,117 +77,110 @@
 	\multicolumn{2}{l}{\faMapMarker\ 21 Hawkshead Crescent, Toronto, Ontario M1W2Z4} 
 \end{tabular}
 \end{center}
+
 }
-%----------------------------------------------------------------------------------------
 
-\begin{resume}
+%\href{http://linkedin.com/in/sbochkarev}{http://linkedin.com/in/sbochkarev}
 
-%----------------------------------------------------------------------------------------
-%	OBJECTIVE SECTION
-%----------------------------------------------------------------------------------------
- 
-\section{OBJECTIVE}  
-To become a leading expert in the field of robotics with the emphasis on task planning. I aim to acquire skills and master technologies in this field to implement them on the state of the art physical systems.
- 
-%----------------------------------------------------------------------------------------
-%	Technology SKILLS SECTION
-%----------------------------------------------------------------------------------------
+%\begin{center}
+%\begin{tabular}{ l l }
+%	\faLinkedin\  \href{http://www.linkedin.com/in/sbochkarev}{linkedin.com/in/sbochkarev} & \faGithub\ \href{https://github.com/sbochkar}{github.com/sbochkar}\\
+%	\faPhone\ (226) 808-1064 & \faAt\ \href{sbochkarev@outlook.com}{sbochkarev@outlook.com}\\
+%	\multicolumn{2}{l}{\faMapMarker\ 21 Hawkshead Crescent, Toronto, Ontario M1W2Z4} 
+%\end{tabular}
+%\end{center}
+%\begin{center}
+%\huge\color{subheadings}\custombold{LIFELONG LEARNER}
+%\end{center}
 
-\section{TECHNOLOGY \\ SKILLS} 
+\section{Skills}
+\begin{minipage}[t]{.6\textwidth}
+\subsection{Software}
+Python \textbullet{} C \textbullet{} C++ \textbullet{} Matlab \textbullet{}
+\LaTeX\ \\ 
+ROS \textbullet{} Make \textbullet{} LD \textbullet{} GDB \textbullet{} Ubuntu \textbullet{} Git
+\sectionsep
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.35\textwidth}
+\subsection{Hardware}
+Osciloscopes \textbullet{} DMMs \textbullet{} Logic Analyzers\\
+Function Generators \textbullet{} Soldering Station\\ 
+%\location{Native fluency:} English, Spanish\\
+\end{minipage}
+%\sectionsep
 
-\begin{tabular}{ l l }
-{\sl Programming Languages:} &Python, C, C++. \\
-{\sl Tool Chain:} &Vim, Sublime, Make, Ld, Gdb, Cmake. \\
-{\sl Software:} &Linux, ROS, KiCAD, Sublime, Vim, Git, MATLAB. \\
-\end{tabular}
+\section{Experience}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
+\runsubsection{NVIDIA}
+\descript{| Embedded Engineering Intern }
+\location{July 2014 – December 2014 | Santa Clara, CA}
+\begin{tightemize}
+\item Worked on implementing battery charging logic in C on a micro-controller containing ARM Cortex-M0
+\item Utilized full GNU tool chain: vim, make, ld, gdb, git.
+\item Validated performance of the prototype in the lab.
+\end{tightemize}
+\sectionsep
 
-\section{EDUCATION}
+\runsubsection{NVIDIA}
+\descript{| GeForce Application Engineering Intern}
+\location{January 2013 – April 2013 | Santa Clara, CA}
+\begin{tightemize}
+\item Identify, verify, and document possible PCB modifications on the graphics cards that would be used by overclocking enthusiasts in Extreme Overclocking competitions
+\item Perform competitive performance studies and analysis 
+%\item Provide specifications and guidelines for NVIDIA products and services to its partners
+%\item Conduct performance tests under various heat and workload conditions
+\end{tightemize}
+\sectionsep
 
-{\sl Master of Applied Science,}  \hfill January 2015 - December 2016 \\
-%University of Waterloo, Waterloo, ON\\\\
-{\sl Bachelor of Applied Science,}  \hfill Septmeber 2009 - June 2014 \\
-University of Waterloo, Waterloo, ON\\
- 
-%----------------------------------------------------------------------------------------
-%	PROFESSIONAL EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
- 
-\section{EXPERIENCE}
-
-{\sl Graduate Student Researcher} \hfill January 2015 - December 2016 \\
-University of Waterloo, Waterloo, ON, Canada
-\begin{itemize}
-\item Design and analysis of the coverage path generation algorithms. 
-\item Prototyping, simulation, and visualization of the algorithms in Python.
-\item Utilized ROS framework in conjunction with Labview and C++ to benchmark synchronization controllers on the 4-DOF manipulator.
-\end{itemize} 
-
-{\sl Embedded Engineering Intern} \hfill July 2014 - December 2014 \\
-NVIDIA, Santa Clara, CA, USA
-\begin{itemize}
-\item Worked on a embedded charging system for a mobile device.
-\item Embedded development in C for ARM Cortex-M0.
-\item Benchmarked and tested the system using oscilloscopes.
-\end{itemize} 
-
-%{\sl Undergraduate Research Assitant} \hfill August 2013 - April 2014 \\
-%University of Waterloo, Waterloo, ON, Canada
-%\begin{itemize} \itemsep -2pt % Reduce space between items
-%\item Designed and developed Django/AngularJS software systems for the Department of Defense, Army, and Navy.
-%\end{itemize}
-
-{\sl GeForce Application Engineering Intern} \hfill January 2013 - April 2013 \\
-NVIDIA, Santa Clara, CA, USA
-\begin{itemize} \itemsep -2pt % Reduce space between items
-\item Identify, verify, and document possible PCB modifications on the graphics cards for overclocking enthusiasts.
-\item Perform and present competitive performance studies.
-\end{itemize}
- 
-%{\sl Tesla Application Engineering Intern} \hfill April 2012 - August 2012\\
-%NVIDIA, Santa Clara, CA, USA
-%\begin{itemize} 
-%\item Performed the full software development process with the end result of deploying a large scale software system that manages access to high priority physical and logical assets.
-%\end{itemize} 
-
-{\sl Electrical Engineering Intern} \hfill Septmeber 2011 - December 2011\\
-Christie Digital Systems, Waterloo, ON, Canada
-\begin{itemize} 
-\item Maintain schematics for a high power LED driver in Mentor Graphics.
-\item Extensive use of lab equipment.
-\end{itemize} 
-
-%{\sl QA Specialist} \hfill January 2011 - April 2011\\
-%Alacetel-Lucent, Ottawa, ON, Canada
-%\begin{itemize} 
-%\item Performed the full software development process with the end result of deploying a large scale software system that manages access to high priority physical and logical assets.
-%\end{itemize} 
+\runsubsection{Christie Digital}
+\descript{| Electrical Engineering Intern}
+\location{September 2011 – December 2011 | Waterloo, ON}
+\begin{tightemize}
+\item I was responsible for maintaining schematics of a new LED driver in Mentor Graphics.
+\item Conducted multiple lab bench tests with oscilloscope, multimeter, amp meter, power supply.
+\item Identified and implemented hardware and PCB modifications for debugging purposes.
+\end{tightemize}
+\sectionsep
 
 
-%----------------------------------------------------------------------------------------
-%	COMMUNITY SERVICE SECTION
-%---------------------------------------------------------------------------------------- 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     RESEARCH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\section{COMMUNITY \\ SERVICE}
+\section{Research}
+\runsubsection{Control Systems Lab, University of Waterloo}
+\descript{| Graduate Researcher}
+\location{Jan 2014 – Present | Waterloo, CA}
+\begin{tightemize}
+\item Design and analysis of the coverage path generation algorithms with publications submitted.
+\item Extensive Python development for prototyping potential algorithms.
+\end{tightemize}
+\sectionsep
 
-%Kennesaw Mountain Trail Club, {\sl Volunteer} \hfill February 2014 - Present \\
-%Race Against Violence, {\sl Volunteer} \hfill October 2012 - Present \\
-%9\/11 Memorial Stair Climb For The Fallen Heroes, {\sl Volunteer \& Climber} \hfill September 2016 - Present \\
+\runsubsection{Systems and Control Group}
+\descript{| Undergraduate Student Researcher}
+\location{Mar 2012 – May 2013 | Waterloo, CA}
+\begin{tightemize}
+\item Utilized MATLAB environment to simulate a path following controller for a model of a 4-DOF manipulator
+\item Implemented the controller in Labview to control an actual robotic arm
+\item Developed a path following controller for a robot with differential drive
+\item Implemented the controller in C++ utilizing ROS framework
+\end{tightemize}
+\sectionsep
 
-%----------------------------------------------------------------------------------------
-%	EXTRA-CURRICULAR ACTIVITIES SECTION
-%----------------------------------------------------------------------------------------
+\section{Education}
+\runsubsection{University of Waterloo}
+\descript{| MASc in Electrical and Computer Engineering, Systems and Control}
+\location{Expected December 2016 | Waterloo, ON \textbullet{} Cum. GPA: N/A}
+\sectionsep
 
-\section{EXTRA-CURRICULAR \\ ACTIVITIES} 
+\runsubsection{University of Waterloo}
+\descript{| BASc in Electrical and Computer Engineering}
+\location{Electrical and Computer Engineering| June 2014 | Waterloo, ON}
+Dean's List (4 Semesters) \textbullet{}
+Cum. Ave: 90.12\% \\
+%Major GPA: 3.94 / 4.0
+\sectionsep
 
-IEEE HuRot Team, {\sl Embedded Comms Expert} \hfill December 2009 - June 2010\\
-UW Alternative Fuels Team, {\sl PCB Layout} \hfill September 2011 - December 2011 \\
- 
-
-%----------------------------------------------------------------------------------------
-
-\end{resume}
-\end{document}
+\end{document}  \documentclass[]{article}
